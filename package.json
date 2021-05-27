@@ -1,0 +1,23 @@
+{
+  "name": "ssl-express",
+  "description": "This demo is for creating HTTPS server with express. Node has https module we will use.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev server/index.ts",
+    "build": "ncc build server/index.ts -o dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.6.1",
+    "@vercel/ncc": "^0.28.6",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
+  }
+}
