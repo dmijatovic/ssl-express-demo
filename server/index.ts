@@ -7,7 +7,7 @@ import getEnv from './utils/getEnv'
 import {loggerMiddleware,logInfo} from './utils/log'
 import apiTest from './handler/apiTest'
 
-const PORT = getEnv("PORT","8080")
+const PORT = getEnv("PORT","8433")
 
 const app = express()
 
@@ -32,7 +32,7 @@ app.use(loggerMiddleware)
 app.use("/api",apiTest)
 
 //  STATIC html content
-app.use(express.static("public"))
+app.use(express.static(`${__dirname}/public`))
 
 // listen to container/process stop
 process.on("SIGINT",()=>{
