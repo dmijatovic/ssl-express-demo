@@ -8,6 +8,6 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - ./env/ssl-api.env
+      - ./.env/ssl-api.env
     ports:
       - "8081:8081"

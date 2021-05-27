@@ -2,8 +2,10 @@ import express, {Request,Response} from 'express'
 import https from 'https'
 import helmet from 'helmet'
 import fs from 'fs'
+
 import getEnv from './utils/getEnv'
 import {loggerMiddleware,logInfo} from './utils/log'
+import apiTest from './handler/apiTest'
 
 const PORT = getEnv("PORT","8080")
 
@@ -13,24 +15,24 @@ const app = express()
 //   key: getEnv("SSL_API_KEY","SSL_API_KEY"),
 //   cert: getEnv("SSL_API_CERT","SSL_API_CERT"),
 // }
-
 const sslOptions = {
   key: fs.readFileSync(`${__dirname}/.cert/key.pem`),
   cert: fs.readFileSync(`${__dirname}/.cert/cert.pem`)
 }
 
+// ---MIDDLEWARE---
 // use HTTPS only
 app.use(helmet())
-
+// body parsers
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware)
 
-app.use(express.static("public"))
+//  API routes
+app.use("/api",apiTest)
 
-app.get("/api",(req:Request,res:Response)=>{
-  res.json({
-    message:"Api server is OK"
-  })
-})
+//  STATIC html content
+app.use(express.static("public"))
 
 // listen to container/process stop
 process.on("SIGINT",()=>{
@@ -45,6 +47,7 @@ process.on("SIGTERM",()=>{
   process.exit(1)
 })
 
+// HTTPS server
 const sslServer = https.createServer(sslOptions,app)
 sslServer.listen(PORT,()=>{
   logInfo(`SSL server on port ${PORT}`)
