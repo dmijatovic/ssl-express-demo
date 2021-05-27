@@ -1,9 +1,6 @@
 const autocannon = require('autocannon')
 const utils = require('./utils')
 
-// import autocannon from 'autocannon'
-// import utils from './utils'
-
 let abort=false
 const noId={
   list:0,
@@ -35,12 +32,6 @@ function saveResults(err, result){
   }
   utils.saveToLowdb(err,{
     ...result,
-    IdNotRetuned:{
-      ...noId
-    },
-    Created:{
-      ...created
-    },
     statusByRoute
   })
 }

@@ -26,9 +26,8 @@ module.exports = {
       console.error(err)
     }else{
       // basic stats
-      const {IdNotRetuned, Created} = result
-      console.log(`IdNotRetuned tot: ${(IdNotRetuned.list + IdNotRetuned.item)}, lists: ${IdNotRetuned.list}, items:${IdNotRetuned.item}`)
-      console.log(`Created tot: ${(Created.list + Created.item)}, lists: ${Created.list}, items: ${Created.item}`)
+      const {statusByRoute} = result
+      console.log(`statusByRoute: ${JSON.stringify(statusByRoute)}`)
       // add to report
       db.get('report')
         .push(result)
@@ -53,7 +52,8 @@ module.exports = {
   },
   // settings
   settings:{
-    connections:1,
+    //default url (actix)
+    connections:11,
     duration:3,
   },
   todoItem:{

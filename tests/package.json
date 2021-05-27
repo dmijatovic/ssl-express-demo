@@ -5,14 +5,14 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test:express": "node autocannon/load_test.js",
-    "test:fastify": "node autocannon/load_test.js"
+    "test:express": "TEST=EXPRESS node autocannon/load_test.js",
+    "test:fastify": "TEST=FASTIFY node autocannon/load_test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "autocannon": "^7.3.0",
-    "lowdb": "^2.1.0"
+    "lowdb": "^1.0.0"
   }
 }
