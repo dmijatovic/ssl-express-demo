@@ -7,6 +7,7 @@ import getEnv from './utils/getEnv'
 import {loggerMiddleware,logInfo} from './utils/log'
 import apiTest from './handler/apiTest'
 
+// const HOST = getEnv("HOST","localhost")
 const PORT = getEnv("PORT","8433")
 
 const app = express()

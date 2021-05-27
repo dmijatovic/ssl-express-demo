@@ -52,9 +52,8 @@ module.exports = {
   },
   // settings
   settings:{
-    //default url (actix)
-    connections:11,
-    duration:3,
+    connections:10,
+    duration:60,
   },
   todoItem:{
     "title":"Todo item",

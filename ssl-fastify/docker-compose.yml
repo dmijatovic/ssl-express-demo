@@ -12,3 +12,8 @@ services:
       PORT: "8433"
     ports:
       - "8433:8433"
+    networks:
+      - net
+
+networks:
+  net:
