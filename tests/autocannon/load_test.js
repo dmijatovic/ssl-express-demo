@@ -23,7 +23,7 @@ if (TEST==='EXPRESS'){
   options.title="ssl-express"
 }
 
-console.log("TEST...", TEST)
+// console.log("TEST...", TEST)
 
 function saveResults(err, result){
   if (abort===true) {
