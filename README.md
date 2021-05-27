@@ -1,52 +1,18 @@
-# HTTPS with express
+# Node SSL bench
 
-This demo is for creating HTTPS server with express. Node has https module we will use.
-It is loosly based on [this article](https://sitepoint.com/how-to-use-ssltls-with-node-js/).
+This project is created to test HTTPS performance of two most popular node frameworks Fastify and Express.
 
-For creating self-signed certificate see [this document](docs/CERT.md)
+I have [another benchmark repo] where I tested various technologies for developing web servers api.
+The learning from this benchmark proven that NodeJS is quite performant choice which I did not expected.
 
-## Development
+## Express SSL implementation
 
-- npm install all dependencies
+For express implemenation see [readme file ssl-express folder](ssl-express/README.md)
 
-- create hidden folder under the server folder
+## Fastify SSL implementation
 
-```bash
-mkdir server/.cert
-```
+For fastify ssl implementation see [readme file in ssl-fastify folder](ssl-fastify/README.md)
 
-- create self signed keys using [these steps](docs/CERT.md)
+## Create self-signed certificate
 
-- run in dev mode `npm run dev`
-
-## Dependencies
-
-```bash
-# install dependencies
-npm i -s express helmet
-# install dev dependencies
-npm i -D typescript ts-node-dev @types/node @types/express
-# create default typescript definitions tsconfig.json
-npx tsc --init
-```
-
-## Helmet
-
-This module takes care about the HTTPS traffic. It forces all traffic to HTTPS.
-
-## Docker
-
-```bash
-# create docker image using default Dockerfile
-docker build -t dv4all/sslapi:0.0.1 .
-
-# build using docker compose
-docker-compose build
-
-# run using docker compose
-docker-compose up -d
-
-# close
-docker-compose down
-
-```
+To create self-signed certificate [read this info](docs/CERT.md)

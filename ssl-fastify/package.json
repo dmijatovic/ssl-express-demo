@@ -1,0 +1,27 @@
+{
+  "name": "ssl-fastify",
+  "version": "1.0.0",
+  "description": "This demo is for creating HTTPS server with express. Node has https module we will use. It is loosly based on [this article](https://sitepoint.com/how-to-use-ssltls-with-node-js/).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "ts-node-dev server/index.ts",
+    "build": "ncc build server/index.ts -o dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.16.2",
+    "fastify-helmet": "^5.3.1",
+    "fastify-static": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "@vercel/ncc": "^0.28.6",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
+  }
+}
