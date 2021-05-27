@@ -10,11 +10,12 @@ async function getApiTest(req:Request,res:Response){
 async function postApiTest(req:Request,res:Response){
   const data = req.body
   if (typeof data == "undefined") return invalidRequest(res,"Request body is required")
-  res.json({
-    message:"Api server is OK",
-    method: "POST",
-    body:data
-  })
+  res.status(201)
+    .json({
+      message:"Api server is OK",
+      method: "POST",
+      body:data
+    })
 }
 
 const routes = Router()
