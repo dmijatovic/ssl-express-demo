@@ -16,11 +16,12 @@ let statusByRoute={}
 const TEST = process.env.TEST
 const options={
   title:"ssl-fastify",
-  url:"https://localhost:8433"
+  url:"https://localhost:8434"
 }
 
 if (TEST==='EXPRESS'){
   options.title="ssl-express"
+  options.url="https://localhost:8433"
 }
 
 // console.log("TEST...", TEST)

@@ -3,15 +3,15 @@ version: '3'
 services:
   ssl-api:
     container_name: ssl-api
-    image: dv4all/ssl-api-fastify:0.0.2
+    image: dv4all/ssl-api-fastify:0.0.3
     build:
       context: .
       dockerfile: Dockerfile_v14
     environment:
       HOST: "0.0.0.0."
-      PORT: "8433"
+      PORT: "8434"
     ports:
-      - "8433:8433"
+      - "8434:8434"
     networks:
       - net
 
