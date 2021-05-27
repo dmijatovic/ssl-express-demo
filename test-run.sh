@@ -32,7 +32,7 @@ take_a_break 5
 # ---------------------
 # fastify load test
 # start
-cd ssl-fastify
+cd ../ssl-fastify
 docker-compose up -d
 # wait
 take_a_break 5
