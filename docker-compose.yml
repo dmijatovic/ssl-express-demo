@@ -3,11 +3,11 @@ version: '3'
 services:
   ssl-api:
     container_name: ssl-api
-    image: dv4all/ssl-api:0.0.1
+    image: dv4all/ssl-api:0.0.2
     build:
       context: .
       dockerfile: Dockerfile
     env_file:
       - ./.env/ssl-api.env
     ports:
-      - "8081:8081"
+      - "8433:8433"

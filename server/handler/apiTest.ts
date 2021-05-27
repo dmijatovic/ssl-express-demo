@@ -9,7 +9,6 @@ async function getApiTest(req:Request,res:Response){
 
 async function postApiTest(req:Request,res:Response){
   const data = req.body
-  console.log("postApiTest...", data)
   if (typeof data == "undefined") return invalidRequest(res,"Request body is required")
   res.json({
     message:"Api server is OK",
